@@ -1,0 +1,146 @@
+<html></html>
+ <head>
+  <title>
+   Music Player
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #d0bc08 0%, #277e3d 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .player {
+            width: 240px;
+           
+             background: rgba(1, 5, 6, 0.968);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0px 10px rgba(193, 77, 202, 0.8);
+            color: white;
+            text-align: center;
+        }
+        .player img {
+            box-shadow: 0 0 15px rgb(193, 77, 202, 0.8);
+            margin-top: 20px;
+            width: 50%;
+            height: 20%;
+            border-radius: 10px;
+        }
+        .player h2 {
+            margin: 20px 0 5px;
+            font-size: 24px;
+        }
+        .player p {
+            margin: 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .controls i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .progress span {
+            font-size: 12px;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 5px;
+            background: #f9f5f5;
+            border-radius: 5px;
+            margin: 0 10px;
+            position: relative;
+        }
+        .progress-bar div {
+            height: 100%;
+            background: #e24e37;
+            border-radius: 5px;
+            width: 40%;
+        }
+        .playback {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .playback i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .playback .play {
+            font-size: 35px;
+            background: #35cfcf;
+            border-radius: 50%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="player">
+   <div class="header">
+    <i class="fas fa-bars">
+    </i>
+    <span style="margin: 15%;">
+     NOW PLAYING
+    </span>
+    <i class="fas fa-search">
+    </i>
+   </div>
+   <img src="https://th.bing.com/th/id/OIP.h2kxlzkRM41OIeK5tWrPJwAAAA?rs=1&pid=ImgDetMain" alt="">
+   <h2 style="text-shadow: 2px 0 10px red;">
+    Dil meri na sune
+   </h2>
+   <p>
+    Atif Aslam
+   </p>
+   <div class="controls">
+    <i class="fas fa-volume-up">
+    </i>
+    <i class="fas fa-sync-alt">
+    </i>
+    <i class="fas fa-random">
+    </i>
+    <i class="fas fa-plus">
+    </i>
+   </div>
+   <div class="progress">
+    <span>
+     1:25
+    </span>
+    <div class="progress-bar">
+     <div>
+     </div>
+    </div>
+    <span>
+     5:32
+    </span>
+   </div>
+   <div class="playback">
+    
+    <i class="fas fa-backward">
+    </i>
+    <i style="padding-left: 20px; box-shadow: 0 0 9px rgb(235, 87, 193);" class="fas fa-play play">
+    </i>
+    <i  class="fas fa-forward">
+    </i>
+   </div>
+  </div>
+ </body>
+</html>

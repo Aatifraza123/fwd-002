@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+           background-color: black;
+        }
+        .box{
+            width: 100px;
+            height: 90vh;
+
+        }
+        .ball{
+            margin-top: 200%;
+            margin-left: 300%;
+            width: 140px;
+            height: 140px;
+            background-color: aqua;
+            border-radius: 50%;
+        }
+        .ball:hover{
+            animation: movetheball 5s ease-in-out forwards;
+
+        }
+        @keyframes movetheball{
+            25%{
+                transform: translateX(400px,200px);
+                background-color: rgb(238, 8, 8);
+                border-radius: 2px;
+            }
+            50%{
+                transform: translate(300px,250px);
+                transform:   rotatey(120deg);
+                background-color: chocolate;
+
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

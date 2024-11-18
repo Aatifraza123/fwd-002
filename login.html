@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background-color: #4267b2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #365899;
+}
+
+.or-separator {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.or-separator span {
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+    top: -10px;
+}
+
+.facebook-btn {
+    width: 100%;
+    height: 40px;
+    background-color: #42b72a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.facebook-btn:hover {
+    background-color: #3e8e41;
+}
+
+.animation-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #4267b2;
+    border-radius: 50%;
+    position: absolute;
+    animation: pulse 2s infinite;
+}
+
+.circle:nth-child(1) {
+    left: -30px;
+}
+
+.circle:nth-child(2) {
+    left: 0;
+}
+
+.circle:nth-child(3) {
+    left: 30px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <form>
+                <input type="text" placeholder="Email or Phone Number" id="email" name="email">
+                <input type="password" placeholder="Password" id="password" name="password">
+                <button type="submit">Log In</button>
+                <a href="#">Forgot account?</a>
+            </form>
+            <div class="or-separator">
+                <span>or</span>
+            </div>
+            <button class="facebook-btn">Create New Account</button>
+        </div>
+        <div class="animation-container">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <script>
+        // Add animation to the circles
+        const circles = document.querySelectorAll('.circle');
+        circles.forEach((circle, index) => {
+            circle.style.animationDelay = `${index * 0.5}s`;
+        });
+    </script>
+</body>
+</html>

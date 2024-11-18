@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b0101;
+        }
+
+        .timer-container {
+            
+            background:linear-gradient(135deg,#151313,#491038);
+            width: 50%;
+            margin: 160px ;
+            padding: 20px;
+            border: 1px solid #efeeef;
+            border-radius: 10px;
+            box-shadow: 0 0 18px #dc089c;
+        }
+
+        .timer-display {
+            text-shadow: 0 0 15px rgb(255, 4, 83);
+            color: #f6f8f7;
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          
+
+        }
+
+        #hours,
+        #minutes,
+        #seconds {
+            margin: 5px 0 0 39px;
+        }
+
+        button {
+            margin: 5px 0 0 40px;
+
+            background-color: #4CAF50;
+            color: #fbfbfb;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #start-btn {
+
+            background-color: #16e828;
+            color: #f8fcf8;
+        }
+
+        #stop-btn {
+            background-color: #dc081d;
+            color: #f8fcf8;
+        }
+
+        #reset-btn {
+            background-color: #dc7d08;
+            color: #f8fcf8;
+        }
+
+        #start-btn:hover {
+
+            background-color: #111211;
+            box-shadow: 0 0 10px #dc089c;
+        }
+
+        #stop-btn:hover {
+            box-shadow: 0 0 10px #dc089c;
+            background-color: #101010;
+        }
+
+        #reset-btn:hover {
+            background-color: #101110;
+            box-shadow: 0 0 10px #dc089c;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="timer-container">
+        <div class="timer-display">
+            <span id="hours">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+        </div>
+        <button id="start-btn">Start</button>
+        <button id="stop-btn">Stop</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+        let timerInterval;
+
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+        const startBtn = document.getElementById('start-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        startBtn.addEventListener('click', startTimer);
+        stopBtn.addEventListener('click', stopTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                seconds++;
+                if (seconds === 60) {
+                    minutes++;
+                    seconds = 0;
+                }
+                if (minutes === 60) {
+                    hours++;
+                    minutes = 0;
+                }
+                updateTimerDisplay();
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+            updateTimerDisplay();
+        }
+
+        function updateTimerDisplay() {
+            hoursElement.textContent = padZero(hours);
+            minutesElement.textContent = padZero(minutes);
+            secondsElement.textContent = padZero(seconds);
+        }
+
+        function padZero(number) {
+            return (number < 10 ? '0' : '') + number;
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+

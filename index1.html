@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+button {
+    background-color: #9ce29e;
+    border-radius: 8px;
+    border: 1px solid red;
+}
+
+        button:active{
+            background-color: #4CAF50;
+            border-radius: 8px;
+            cursor: pointer;
+            color: aliceblue;   
+        }
+        a{
+            text-decoration: none;
+            background-color: #e80707;
+            color: white;
+            border-radius: 7px;
+            border: 2px solid black;
+        }
+
+        span{
+           background-color: #9ce29e;
+            padding: 8px;
+            margin: 8px;
+        }
+
+        span:nth-child(even){
+            background-color: #f11b1b;
+        }
+        .navbar {
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
+
+.navbar-nav > li:last-child {
+  margin-right: 0;
+}
+     
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">Logo</div>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+    <button>click on me</button>
+    <br>
+    <br>
+    <a href="https://www.facebook.com/">click here</a>
+    <br>
+    <br>
+    <div class="parent">
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+    <span class="child">Hello</span>
+</div>
+</body>
+</html>

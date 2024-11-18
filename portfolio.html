@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterCard Design</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #171616;
+}
+
+.card {
+    
+    width: 400px;
+    height: 250px;
+    background: linear-gradient(135deg, #4670cb, #be3eed);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.red {
+    background-color: #ff5f5f;
+}
+
+.yellow {
+    background-color: #ffcc00;
+    left: -30px;
+}
+
+.chip {
+    width: 60px;
+    height: 40px;
+    background-image:url(./chip.jpg);
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.card-number {
+    margin-top: 80px;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.card-holder,
+.expiry {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.card-holder strong,
+.expiry strong {
+    display: block;
+    font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <div class="circle red"></div>
+            <div class="circle yellow"></div>
+        </div>
+        <div class="chip">
+          
+        </div>
+        <div class="card-number">
+            <span>1234 5678 9012 3456</span>
+        </div>
+        <div class="card-info">
+            <div class="card-holder">
+                <span>Card Holder</span>
+                <strong>Aatif Raza</strong>
+            </div>
+            <div class="expiry">
+                <span>Expires</span>
+                <strong>10/26</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

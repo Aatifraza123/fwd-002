@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>3D Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 980px;
+}
+
+.gallery-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    transition: transform 0.9s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0px 8px 15px rgba(37, 36, 36, 0.853);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s ease;
+    border-radius: 10px;
+}
+
+.gallery-item:hover img  {
+    transform: rotatez(360deg);
+    border: 2px solid red;
+    box-shadow: 0px 8px 18px rgba(213, 14, 104, 0.853);
+}
+
+
+    </style>
+</head>
+<body>
+ 
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gallery Image 1">
+          
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/17632044/pexels-photo-17632044/free-photo-of-orange-lamborghini-huracan-sports-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gallery Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/220309/pexels-photo-220309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gallery Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/16431317/pexels-photo-16431317/free-photo-of-racing-bmw-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gallery Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/15085650/pexels-photo-15085650/free-photo-of-fast-car-with-spoiler.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gallery Image 5">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/6355181/pexels-photo-6355181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gallery Image 6">
+        </div>
+    </div>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const width = item.offsetWidth;
+                const height = item.offsetHeight;
+                const xVal = e.layerX;
+                const yVal = e.layerY;
+                const xRotation = 20 * ((yVal - height / 2) / height);
+                const yRotation = -15 * ((xVal - width / 2) / width);
+
+                item.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.1)`;
+            });
+
+            item.addEventListener('mouseout', () => {
+                item.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+        <title>Hotel booking Singal page ui | devhubspot</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css" integrity="sha512-ZH3KB6wI5ADHaLaez5ynrzxR6lAswuNfhlXdcdhxsvOUghvf02zU1dAsOC6JrBTWbkE1WNDNs5Dcfz493fDMhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./styles.css" />
+        <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+            :root{
+                --primary-color: #ce1c4f;
+                --primary-color-dark: #a166c5;
+                --text-dark: #f75707;
+                --text-light: #0a0a07;
+                --white: #f8f6f6;
+                --max-width: 100%;
+               
+                }
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+               
+              }
+              
+              .section_container {
+                max-width: var(--max-width);
+                margin: auto;
+                padding: 5rem 1rem;
+               
+               
+              }
+              
+              .section_subheader {
+                margin-bottom: 0.5rem;
+                position: relative;
+                font-weight: 500;
+                letter-spacing: 2px;
+                color: var(--text-dark);
+               
+              }
+              
+              .section_subheader::after {
+                position: absolute;
+                content: "";
+                top: 50%;
+                transform: translate(1rem, -50%);
+                height: 2px;
+                width: 4rem;
+                background-color: var(--primary-color);
+              }
+              
+              .section_header {
+                max-width: 600px;
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+                font-weight: 600;
+                line-height: 3rem;
+                color: var(--text-dark);
+               
+              }
+              
+              .section_description {
+                max-width: 600px;
+                margin-bottom: 1rem;
+                color: var(--text-light);
+              }
+              
+              .btn {
+                padding: 0.75rem 1.5rem;
+                outline: none;
+                border: none;
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--white);
+                background-color: var(--primary-color);
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+                
+              }
+              
+              .btn:hover {
+                background-color: var(--primary-color-dark);
+              }
+              
+              img {
+                width: 100%;
+                display: flex;
+                
+              }
+              
+              a {
+                text-decoration: none;
+              }
+              
+              .logo {
+                max-width: 120px;
+                
+              }
+              
+              html,
+              body {
+                scroll-behavior: smooth;
+              }
+              
+              body {
+                font-family: "Poppins", sans-serif;
+              }
+              
+              .header {
+                background-image: url( https://images.alphacoders.com/439/439191.jpg);
+                background-position: center center;
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+              
+              nav {
+                position: fixed;
+                isolation: isolate;
+                top: 0;
+                width: 100%;
+                max-width: var(--max-width);
+                margin: auto;
+                z-index: 9;
+                /* background-color: #c08c73; */
+              }
+              
+              .nav_bar {
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2rem;
+                background-color:#9a1ec4;
+              }
+              
+              .nav_menu_btn {
+                font-size: 1.5rem;
+                color: var(--white);
+                cursor: pointer;
+              }
+              
+              .nav_links {
+                list-style: none;
+                position: absolute;
+                width: 100%;
+                padding: 2rem;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 2rem;
+                background-color: rgba(156, 32, 223, 0.9);
+                transform: translateY(-100%);
+                transition: 0.5s;
+                z-index: -1;
+              }
+              
+              .nav_links.open {
+                transform: translateY(0);
+              }
+              
+              .nav_links a {
+                position: relative;
+                isolation: isolate;
+                padding-bottom: 8px;
+                color: var(--white);
+                transition: 0.3s;
+              }
+              
+              .nav_btn {
+                display: none;
+              }
+              
+              .header_container {
+                padding-block: 10rem 15rem;
+              }
+              
+              .logo .name{
+                padding: 50%;
+                line-height: .5rem;
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: #f0f0e8;
+                background-color: var(--primary-color);
+                border-radius: 100px;
+                cursor: pointer;
+                transition: 0.3s;
+                border: 5px 5px 20px rgba(0, 0, 0, 0.1);
+            
+              }
+              .logo.name:hover{
+                background-color:var(--primary-color);
+              }
+              .header_container p {
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+                color: var(--white);
+                text-align: center;
+                opacity: 0.6;
+              }
+              
+              .header_container h1 {
+                font-size: 4rem;
+                font-weight: 500;
+                line-height: 4.5rem;
+                color: var(--white);
+                text-align: center;
+              }
+              
+              .header_container h1 span {
+                color: var(--primary-color);
+              }
+              
+              .booking_container {
+                padding-block: 0;
+              }
+            
+              .booking_form {
+                padding: 2rem;
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                background-color: var(--white);
+                border-radius: 10px;
+                transform: translateY(-50%);
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+                
+              }
+              
+              .input_group {
+                flex: 1 1 220px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+              }
+              
+              .input_group span {
+                font-size: 1.75rem;
+                color: var(--primary-color);
+              }
+              
+              .input_group label {
+                font-weight: 500;
+                color: var(--text-dark);
+              }
+              
+              .input_group input {
+                display: block;
+                width: 100%;
+                max-width: 180px;
+                padding-block: 5px;
+                color: var(--text-dark);
+                font-size: 0.9rem;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid var(--primary-color);
+              }
+              
+              .input_group input::placeholder {
+                color: var(--text-light);
+              }
+              
+              .about_container {
+                overflow: hidden;
+                display: grid;
+                gap: 2rem;
+              }
+              
+              .about_image img {
+                max-width: 450px;
+                margin: auto;
+                border-radius: 5px;
+              }
+            
+              .room_grid {
+                margin-top: 4rem;
+                display: grid;
+                gap: 1rem;
+              }
+              
+              .room_card {
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+              }
+              
+              .room_card_image {
+                position: relative;
+                isolation: isolate;
+              }
+            
+              .room_card_image img{
+                height: 390px;
+              }
+              
+              .room_card_icons {
+                position: absolute;
+                right: 1rem;
+                bottom: 1rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                gap: 1rem;
+                z-index: 1;
+              }
+              
+              .room_card_icons span {
+                display: inline-block;
+                padding: 2px 8px;
+                font-size: 1.5rem;
+                background-color: var(--white);
+                border-radius: 100%;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+              }
+              
+              .room_card_icons span:nth-child(1) {
+                color: #f472b6;
+              }
+              
+              .room_card_icons span:nth-child(2) {
+                color: #c084fc;
+              }
+              
+              .room_card_icons span:nth-child(3) {
+                color: #60a5fa;
+              }
+              
+              .room_card_details {
+                padding: 1rem;
+              }
+              
+              .room_card h4 {
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: var(--text-dark);
+              }
+              
+              .room_card p {
+                margin-bottom: 0.5rem;
+                color: var(--text-light);
+              }
+              
+              .room_card h5 {
+                margin-bottom: 1rem;
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--text-light);
+              }
+              
+              .room_card h5 span {
+                font-size: 1.1rem;
+                color: var(--text-dark);
+              }
+            
+            
+              .service{
+                background-image: url('https://images.pexels.com/photos/3770238/pexels-photo-3770238.jpeg?auto=compress&cs=tinysrgb&w=600');
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+            
+              .service_container{
+                padding-block: 0;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+              }
+              .service_content{
+                grid-column:  1/3;
+                padding: 2rem 4rem;
+                background-color: var(--white);
+              }
+            
+              .service_list{
+                list-style: none;
+                margin-top: 2rem;
+                display: grid;
+                gap: 2rem
+              }
+            
+              .service_list li{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: var(--text-dark);
+              }
+            
+            
+              .service_list span{
+                padding: 5px 12px;
+                font-size: 1.2rem;
+                color: var(--text-dark);
+                background-color: var(--text-light);
+                border-radius: 100%;
+              }
+            
+              .service_list li:nth-child(1) span{
+                color: #60a5fa;
+                background: #dbeafe;
+              }
+            
+              .service_list li:nth-child(2) span{
+                color: #f462b6;
+                background: #fce7f3;
+              }
+            
+              .service_list li:nth-child(3) span{
+                color: #c084fc;
+                background: #f3e8ff;
+              }
+            
+              .service_list li:nth-child(4) span{
+                color: #fb7185;
+                background: #ffe4e6;
+              }
+            
+              .banner_content{
+                padding: 2rem;
+                display: flex;
+                gap: 2rem;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                border-radius: 10px;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+              }
+            
+              .banner_card{
+                text-align: center;
+                flex: 1 1 180px;
+              }
+            
+              .banner_card h4{
+                font-size: 2rem;
+                font-weight: 600;
+                color: var(--text-dark);
+              }
+            
+              .banner_card p{
+                color: var(--text-light);
+              }
+            
+              .explore :is(.section_subheader, .section_header){
+                text-align: center;
+                margin-inline: auto;
+              }
+            
+              .explore_bg{
+                margin-top: 4rem;
+                padding-block: 3rem;
+                display: grid;
+                grid-template-columns: minmax(1rem, 1fr) minmax(0, var(--max-width)) minmax(1rem , 1fr);
+                background-image: url('https://images.pexels.com/photos/2507010/pexels-photo-2507010.jpeg?auto=compress&cs=tinysrgb&w=600');
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+            
+              .explore_content{
+                grid-column: 2/3;
+                max-width: 400px;
+                padding: 2rem;
+                background-color:white ;
+                border-radius: 5px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+              }
+            
+            
+              .explore_content p{
+                margin-bottom: 0.5rem;
+              }
+            
+              .explore_content h4{
+                margin-bottom:  1rem;
+                font-size: 1.2rem;
+                font-weight: 600;
+                line-height: 1.5rem;
+                color: var(--text-dark);
+              }
+            
+              .explore_content .btn{
+                color: var(--primary-color);
+                background: var(--white);
+                border: 1px solid var(--primary-color);
+              }
+            
+              .explore_content .btn:hover{
+                color: var(--white);
+                background: var(--primary-color);
+              }
+            
+              .footer{
+                background: var(--text-dark);
+              }
+            
+              .footer_container{
+                display: grid;
+                gap: 4rem 2rem;
+              }
+            
+              .footer_col .section_description{
+                margin-block: 2rem;
+              }
+            
+              .footer_col h4{
+                margin-bottom: 2rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: var(--white);
+              }
+            
+              .footer_links{
+                list-style: none;
+                display: grid;
+                gap: 1rem;
+              }
+            
+              .footer_links a{
+                color: var(--text-light);
+                transition: 0.3s;
+              }
+            
+              .footer_links a:hover{
+                color: var(--white);
+              }
+            
+              .footer_social{
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+              }
+            
+              .footer_social img{
+                max-width: 25px;
+                opacity: 0.8;
+                transition: 0.3s;
+              }
+            
+              .footer_social img:hover{
+                opacity: 1;
+              }
+            
+              .footer_bar{
+                padding: 1rem;
+                font-size: 0.9rem;
+                color: var(--text-light);
+                text-align: center;
+              }
+            
+              @media (width > 576px) {
+                .room_grid{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            
+                .footer_container{
+                    grid-template-columns: repeat(2. 1fr);
+                }
+              }
+            
+              @media (width > 768px) {
+                nav{
+                    padding: 2rem 1rem;
+                    position: static;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            
+                .nav_bar{
+                    padding: 0;
+                    background-color: transparent;
+                }
+            
+                .nav_menu_btn{
+                    display: none;
+                }
+            
+                .nav_links{
+                    padding: 0;
+                    width: unset;
+                    transform: none;
+                    position: static;
+                    flex-direction: row;
+                    background: transparent;
+                }
+            
+                .nav_btn{
+                    display: block;
+                }
+            
+            
+                .nav_links a::after{
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: 0;
+                    height: 2px;
+                    width: 0;
+                    background-color: var(--primary-color);
+                    transition: 0.3s;
+                    transform-origin: left;
+                }
+            
+                .nav_links a:hover::after{
+                    width: 100%;
+                }
+            
+                .about_container{
+                    grid-template-columns: repeat(2, 1fr);
+                    align-items: center;
+                }
+            
+                .room_grid{
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            
+                .service_content{
+                    grid-column: 2/3;
+                }
+            
+                .footer_container{
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                
+              }
+            
+              @media (width > 1024px) {
+                .room_grid{
+                    gap: 2rem;
+                }
+            
+                /* .footer_container{
+                    grid-template-columns: repeat(2, 1fr);
+                } */
+              }
+            </style>
+    </head>
+    <body>  
+        <header class="header">
+            <nav>
+                <div class="nav_bar">
+                    <div class="logo">
+                        <h2 class="name">DevhubResort</h2>
+                    </div>
+                    <div class="nav_menu_btn" id="menu-btn">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+                <ul class="nav_links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="#explore">Explore</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn nav_btn">Book Now</button>
+            </nav>
+            <div class="section_container header_container" id="home">
+               
+                <p>Simple - Unique - Friendly</p>
+                <h1>Make Yourself At Home <br /> In Our <span>Hotel</span></h1>
+            </div>
+        </header>
+
+        <section class="section_container booking_container">
+            <form accept="/" class="booking_form">
+                <div class="input_group">
+                    <span><i class="ri-calendar-2-fill"></i></span>
+                    <div>
+                        <label for="check-in">CHECK-IN</label>
+                        <input type="text" placeholder="Check in" />
+                    </div>
+                </div>
+
+                <div class="input_group">
+                    <span><i class="ri-calendar-2-fill"></i></span>
+                    <div>
+                        <label for="check-out">CHECK-OUT</label>
+                        <input type="text" placeholder="Check in" />
+                    </div>
+                </div>
+
+                <div class="input_group">
+                    <span><i class="ri-user-fill"></i></span>
+                    <div>
+                        <label for="check-out">GUEST</label>
+                        <input type="text" placeholder="Guest" />
+                    </div>
+                </div>
+
+                <div class="input_group input_btn">
+                    <button class="btn">CHECK OUT</button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- about section -->
+
+
+        <section class="section_container about_container" id="about">
+            <div class="about_image">
+              <img src="https://images.pexels.com/photos/7821349/pexels-photo-7821349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="about" />
+            </div>
+            <div class="about_content">
+              <p class="section_subheader">ABOUT US</p>
+              <h2 class="section_header">The Best Holidays Start Here!</h2>
+              <p class="section_description">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              </p>
+              <div class="about_btn">
+                <button class="btn">Read More</button>
+              </div>
+            </div>
+        </section>
+
+
+        <!-- about section -->
+
+
+        <!-- room section -->
+
+        <section class="section_container room_container">
+            <p class="section_subheader">OUR LIVING ROOM</p>
+            <h2 class="section_header"> The Most Memorable Rest Time Starts Here </h2>
+            <div class="room_grid">
+                <div class="room_card">
+                    <div class="room_card_image">
+                        <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600" alt="room" />
+                        <div class="room_card_icons">
+                            <span><i class="ri-heart-fill"></i></span>
+                            <span><i class="ri-paint-fill"></i></span>
+                            <span><i class="ri-shield-star-line"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="room_card_details">
+                        <h4>Delux Ocean View</h4>
+                        <p>
+                            Bask in luxury with breathtaking ocean views from your private suite.
+                        </p>
+                        <h5>Starting from <span>$399/night</span></h5>
+                        <button class="btn"> Book Now</button>
+                    </div>
+                </div>
+
+                <div class="room_card">
+                    <div class="room_card_image">
+                        <img src="https://images.pexels.com/photos/53577/hotel-architectural-tourism-travel-53577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="room" />
+                        <div class="room_card_icons">
+                            <span><i class="ri-heart-fill"></i></span>
+                            <span><i class="ri-paint-fill"></i></span>
+                            <span><i class="ri-shield-star-line"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="room_card_details">
+                        <h4>Executive Cityscape Room</h4>
+                        <p>
+                           Experience urban elegance and modern confort int he heart of the city.
+                        </p>
+                        <h5>Starting from <span>$299/night</span></h5>
+                        <button class="btn"> Book Now</button>
+                    </div>
+                </div>
+
+
+                <div class="room_card">
+                    <div class="room_card_image">
+                        <img src="https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="room" />
+                        <div class="room_card_icons">
+                            <span><i class="ri-heart-fill"></i></span>
+                            <span><i class="ri-paint-fill"></i></span>
+                            <span><i class="ri-shield-star-line"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="room_card_details">
+                        <h4>Family Garden Retreat</h4>
+                        <p>
+                           Experience urban elegance and modern confort int he heart of the city.
+                        </p>
+                        <h5>Starting from <span>$239/night</span></h5>
+                        <button class="btn"> Book Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+         <!-- room section -->
+
+        <!-- services section -->
+
+        <section class="service" id="service">
+            <div class="section_container service_container">
+                <div class="service_content">
+                    <p class="section_subheader">SERVICES</p>
+                    <h2 class="section_header">Strive Only For The Best.</h2>
+                    <ul class="service_list">
+                        <li>
+                            <span><i class="ri-shield-star-line"></i></span>
+                            High Class Securuty
+                        </li>
+
+                        <li>
+                            <span><i class="ri-24-hours-line"></i></span>
+                            24 Hours Room Service
+                        </li>
+
+                        <li>
+                            <span><i class="ri-headphone-line"></i></span>
+                            Conference Room
+                        </li>
+
+                        <li>
+                            <span><i class="ri-mao-2-line"></i></span>
+                            Tourist Guide Support
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section_container banner_container">
+            <div class="banner_content">
+                <div class="banner_card">
+                    <h4>24+</h4>
+                    <p>Properties Available</p>
+                </div>
+
+                <div class="banner_card">
+                    <h4>300+</h4>
+                    <p>Booking Completed</p>
+                </div>
+
+
+                <div class="banner_card">
+                    <h4>500+</h4>
+                    <p>Happy Customers</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- services section -->
+
+
+        <!-- explore section -->
+
+        <section class="explore" id="explore">
+            <p class="section_subheader">EXPLORE</p>
+            <h2 class="section_header">What's New Today.</h2>
+            <div class="explore_bg">
+                <div class="explore_content">
+                    <p class="section_description">
+                        10th MAR 2023
+                    </p>
+                    <h4>
+                        A New Menu Is Aviable In  Our Hotel
+                    </h4>
+                    <button class="btn">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- explore section -->
+
+
+         <!-- footer section -->
+        <footer class="footer" id="contact">
+            <div class="section_container footer_container">
+                <div class="footer_col">
+                    <div class="logo">
+                        <h2>DevhubResort</h2>
+                    </div>
+                    <p class="section_description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                    <button class="btn">BOOK NOW</button>
+                </div>
+                <div class="footer_col">
+                    <h4>QUICK LINKS</h4>
+                    <ul class="footer_links">
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                    </ul>
+                </div>
+                <div class="footer_col">
+                    <h4>OUR SERVICES</h4>
+                    <ul class="footer_links">
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                        <li><a href=""> Option</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer_col">
+                    <h4>CONTACT US</h4>
+                    <ul class="footer_links">
+                        <li><a href="">info@devhubspot.net</a></li>
+                    </ul>
+                    <div class="footer_social">
+                        <a href="#"><img  src="assets/images/facebook.png"/></a>
+                        <a href="#"><img  src="assets/images/instagram.png"/></a>
+                        <a href="#"><img  src="assets/images/twitter.png"/></a>
+                        <a href="#"><img  src="assets/images/youtube.png"/></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_bar">
+                Copyright 2023 Devhubspot 
+            </div>
+        </footer>
+
+
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
